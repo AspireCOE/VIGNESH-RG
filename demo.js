@@ -26,5 +26,3 @@ const arrowfunction =(firstname,lastname)=>{
 console.log(arrowfunction("vignesh","rg"));
 
 // this keyword
-
-let pri
