@@ -26,3 +26,15 @@ const arrowfunction =(firstname,lastname)=>{
 console.log(arrowfunction("vignesh","rg"));
 
 // this keyword
+
+let print = function(){
+    this.name1='Vignesh'
+    this.print1 = function(){
+        console.log('hi')
+    }
+    //console.log(print1())
+}
+const test = new print()
+console.log(test.name1)
+var a=(test.print1())
+
