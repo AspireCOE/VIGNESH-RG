@@ -22,12 +22,12 @@ insert into studies (firstname,splace,course,cost) values('abc','tui','phy',3000
 
 select avg(scost) from software where dev_in='pascal';
 select age,firstname from programmer;
-select firstname,age from programmer where prof1='java';
+select p.firstname,p.age from programmer p join studies s on p.firstname=s.firstname where course='dsa';
 select title, sold from software where sold=(select max(sold) from software);
-select firstname,dob from programmer where month(dob)=2;
+select firstname,dob from programmer where month(dob)=1;
 select min(cost) as lowest_cost from Studies;
 select firstname from studies where course='java';
-select sum(sold*scost)-sum(dcost) as total_rev from software;
+select sum(sold*scost)-sum(dcost) as total_rev from software where dev_in='c';
 select title,dev_in,scost,dcost,sold from software where firstname='ramesh';
 select count(firstname) as tot_count from studies where splace='subhari';
 select firstname,title,dev_in,scost,dcost,sold from software where (sold*scost)>20000;
@@ -44,14 +44,14 @@ select avg(age) as avg_ageof_female_programmer from programmer where sex='f';
 select firstname ,timestampdiff(year,doj,now()) as experience from programmer order by experience desc;
 select firstname as bday_mnth from programmer where month(dob)= month(now());
 select count(firstname) from programmer where sex='f';
-/*27*/
+select distinct firstname,prof1 from programmer union select firstname,prof2 from programmer;
 select distinct prof1 from programmer;
 select distinct prof as lang_known from (select prof1 as prof from programmer where sex='m'union select prof2 as prof from programmer where sex='m') as lang;
 select avg(salary) as average_salary from programmer;
 select count(firstname) from programmer where salary>=2000 and salary<=4000;
 select * from programmer where prof1 not in('pascal','clipper','cobol') and prof2 not in ('pascal','clipper','cobol');
 select count(firstname) from programmer where sex='f' and age>=24;
-/* 32 */
+select firstname from programmer where month(dob)=month(now()) and (day(now())-day(dob))<=7;
 select * from programmer where timestampdiff(month,dob,now())<12;
 select * from programmer where timestampdiff(year,doj,curdate())=2;
 select title,dcost-(scost*sold) from software where dcost > scost*sold;
