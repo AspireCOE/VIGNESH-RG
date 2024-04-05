@@ -1,0 +1,193 @@
+create table programmer(firstname varchar(8) NOT NULL,DOB date NOT NULL,DOJ date NOT NULL,age int NOT NULL,sex varchar(1) NOT NULL,prof1 varchar(8),prof2 varchar(8),salary int NOT NULL);
+insert into programmer (firstname,dob,doj,age,sex,prof1,prof2,salary) values ('abc','2003-03-01','2022-03-22',24,'m','java','basics',20000);
+insert into programmer (firstname,dob,doj,age,sex,prof1,prof2,salary) values ('abcd','2003-04-08','2022-03-22',24,'m','java','basics',20000);
+insert into programmer (firstname,dob,doj,age,sex,prof1,prof2,salary) values ('ab','2002-02-01','2022-03-22',25,'f','phyton','basics',20000);
+insert into programmer (firstname,dob,doj,age,sex,prof1,prof2,salary) values ('abm','2002-02-01','2022-03-22',25,'f','phyton','basics',20000);
+
+create table software(firstname varchar(8) NOT NULL,title varchar(20) NOT NULL,Dev_in varchar(8) NOT NULL,scost int,dcost int,sold int);
+insert into software (firstname, title, dev_in,scost,dcost,sold) values('abc','todle','basics',700,6000,43);
+insert into software (firstname, title, dev_in,scost,dcost,sold) values('abcd','joy','basics',700,6000,43);
+insert into software (firstname, title, dev_in,scost,dcost,sold) values('ab','boa','basics',700,6000,43);
+
+create table studies(firstname varchar(8) NOT NULL,splace varchar(9) NOT NULL,course varchar(5) NOT NULL,cost int);
+
+insert into studies (firstname,splace,course,cost) values('abc','bnm','java',3000);
+insert into studies (firstname,splace,course,cost) values('abcd','fms','java',3000);
+insert into studies (firstname,splace,course,cost) values('abc','tui','phy',3000);
+insert into studies (firstname,splace,course,cost) values('abc','tui','phy',3000);
+insert into studies (firstname,splace,course,cost) values('am','tui','phy',3000);
+
+select * from studies;
+select * from software ;
+select * from programmer;
+
+/*queries 1*/
+
+select avg(scost) from software where dev_in='pascal';
+select age,firstname from programmer;
+select p.firstname,p.age from programmer p join studies s on p.firstname=s.firstname where course='dsa';
+select title, sold from software where sold=(select max(sold) from software);
+select firstname,dob from programmer where month(dob)=1;
+select min(cost) as lowest_cost from Studies;
+select firstname from studies where course='java';
+select sum(sold*scost)-sum(dcost) as total_rev from software where dev_in='c';
+select title,dev_in,scost,dcost,sold from software where firstname='ramesh';
+select count(firstname) as tot_count from studies where splace='subhari';
+select firstname,title,dev_in,scost,dcost,sold from software where (sold*scost)>20000;
+select title from software where dcost=(select max(dcost) from software);
+select count(title) from software where dev_in='dbase';
+select count(firstname) from studies where splace='paragathi';
+select firstname from studies where cost >=5000 and cost<=10000;
+select avg(cost) from studies;
+select firstname,dob,doj,age,sex,salary from programmer where prof1='c' or prof2='c';
+select firstname from programmer where prof1='pascal' or prof1='cobol';
+select firstname from programmer where prof1!='pascal' or prof1!='cobol';
+select max(age) as oldest_aged_male from programmer where sex='m';
+select avg(age) as avg_ageof_female_programmer from programmer where sex='f';
+select firstname ,timestampdiff(year,doj,now()) as experience from programmer order by experience desc;
+select firstname as bday_mnth from programmer where month(dob)= month(now());
+select count(firstname) from programmer where sex='f';
+select distinct firstname,prof1 from programmer union select firstname,prof2 from programmer;
+select distinct prof1 from programmer;
+select distinct prof as lang_known from (select prof1 as prof from programmer where sex='m'union select prof2 as prof from programmer where sex='m') as lang;
+select avg(salary) as average_salary from programmer;
+select count(firstname) from programmer where salary>=2000 and salary<=4000;
+select * from programmer where prof1 not in('pascal','clipper','cobol') and prof2 not in ('pascal','clipper','cobol');
+select count(firstname) from programmer where sex='f' and age>=24;
+select firstname from programmer where month(dob)=month(now()) and (day(now())-day(dob))<=7;
+select * from programmer where timestampdiff(month,dob,now())<12;
+select * from programmer where timestampdiff(year,doj,curdate())=2;
+select title,dcost-(scost*sold) from software where dcost > scost*sold;
+select title from software where sold=0;
+select scost from software where firstname='merry';
+select distinct splace from studies;
+select count(distinct course) as num_of_courses from studies;
+insert into programmer (firstname,dob,doj,age,sex,prof1,prof2,salary) values ('abab','2002-02-01','2022-03-22',25,'f','phyton','basics',20000);
+select firstname from programmer where (length(firstname)-length(replace(firstname,'a','')))=2;
+select firstname from programmer where length(firstname)<=5;
+insert into programmer (firstname,dob,doj,age,sex,prof1,prof2,salary) values ('a','2003-03-01','2020-03-22',24,'f','java','cobol',20000);
+select firstname from programmer where sex='f' and( prof1='cobol' or prof2='cobol' ) and timestampdiff(year,doj,now())>=2;
+select min(length(firstname)) as shortest_name from programmer;
+select avg(dcost),dev_in from software where title='cobol' group by dev_in;
+select firstname,sex,concat(day(dob),'/',month(dob),'/',year(dob)) as dob,concat(day(dob),'/',month(dob),'/',year(dob)) as doj from programmer;
+select firstname from programmer where day(dob)=day(last_day(dob));
+insert into programmer (firstname,dob,doj,age,sex,prof1,prof2,salary) values ('ababd','2002-02-28','2022-03-22',25,'f','phyton','basics',20000);
+select sum(salary) as amount_paid from programmer where sex='m' and prof1!='cobol' and prof2!='cobol';
+select title, scost, dcost,(dcost-scost)as diff from software order by diff desc;
+select firstname, dob, doj from programmer where month(dob)=month(doj);
+select title from software where length(firstname)>1;
+
+/*queries 2*/
+truncate table software;
+insert into software (firstname, title, dev_in,scost,dcost,sold) values('a','t1','basic1',700,6500,43);
+insert into software (firstname, title, dev_in,scost,dcost,sold) values('b','t2','basic2',700,6000,23);
+insert into software (firstname, title, dev_in,scost,dcost,sold) values('c','t2','basic2',700,7000,21);
+insert into software (firstname, title, dev_in,scost,dcost,sold) values('c','t1','basic2',700,7000,21);
+select * from software;
+-- 1:
+insert into software (firstname, title, dev_in,scost,dcost,sold) values('abce','todle','basics1',700,6000,43);
+select title,count(dev_in) from software group by title;
+select firstname,count(dev_in) from software group by firstname;
+select sex,count(sex) from programmer group by sex;
+select title,max(dcost) from software group by title;
+select title,max(dcost),max(sold) from software group by title;
+select year(dob),count(firstname) from programmer group by year(dob);
+select year(doj),count(firstname) from programmer group by year(doj);
+select month(dob),count(firstname) from programmer group by month(dob);
+select month(doj),count(firstname) from programmer group by month(doj);
+select prof1,count(prof1) from programmer group by(prof1);
+select prof2,count(prof2) from programmer group by(prof2);
+select salary,count(firstname) from programmer group by salary;
+select splace,count(splace) from studies group by splace;
+select course,count(course) from studies group by course;
+select dev_in,sum(dcost) as total_cost from software group by dev_in;
+select dev_in,sum(scost) as total_sells from software group by dev_in;
+select firstname,sum(dcost) from software group by firstname;
+select firstname,sum((scost*sold)) from software group by firstname;
+select firstname,(count(distinct dev_in)) from software group by firstname;
+select title,firstname,sum(scost*sold) from software group by title,firstname;
+select firstname,max(dcost),min(dcost) from software group by firstname;
+select title,avg(dcost),avg(scost*sold),avg(scost*1) from software group by title;
+select splace,count(course),avg(cost) from studies group by splace;
+select splace,count(firstname) from studies group by splace;
+select firstname from programmer where sex='m' or sex='f'; 
+select p.firstname,s.dev_in from programmer p join software s on p.firstname=s.firstname;
+select title,count(dev_in) from software where dcost<1000 group by title;
+select title,(avg(dcost) - avg(scost)) from software group by(title);
+select firstname,sum(scost),sum(dcost),(sum(dcost)-sum(scost * sold)) from software group by firstname having sum(scost*sold) > sum(dcost);
+select max(salary),min(salary),avg(salary) from programmer where salary>2000;
+
+-- queries 3
+
+select firstname from programmer where (salary=(select max(salary) from programmer)) and (prof1='c' or prof2='c');
+select firstname from programmer where (salary=(select max(salary) from programmer)) and (prof1='c' or prof2='c') and sex='f';
+select prof1,max(salary) from programmer group by prof1;
+select firstname,timestampdiff(month,doj,now()) as least_experienced from programmer where timestampdiff(month,doj,now())=(select min(timestampdiff(month,doj,now())) as junior from programmer);
+select firstname,timestampdiff(month,doj,now()) as most_experienced from programmer where timestampdiff(month,doj,now())=(select max(timestampdiff(month,doj,now())) as senior from programmer);
+select prof1 as lang from programmer group by lang having count(distinct firstname)=1 union (select prof2 as lang from programmer group by lang having count(distinct firstname)=1); 
+select firstname as youngest_programmer from programmer where timestampdiff(day,dob,now())=(select min(timestampdiff(day,dob,now())) from programmer);
+select splace,count(distinct firstname) as num_std from studies group by splace having count(distinct firstname)=(select max(std) from (select count(distinct firstname) as std from studies group by splace) as max_std);
+-- 9
+select firstname from programmer where sex='f' and prof1 not in ( 'C', 'C++', 'Oracle','Dbase') and prof2 not in ( 'C', 'C++', 'Oracle','Dbase') and salary>3000;
+select distinct course from studies where cost=(select max(cost) from studies);
+select course,count(distinct firstname) from studies group by course having count(distinct firstname)=(select max(cnt) from (select count(distinct firstname)as cnt from studies group by course)as max_cnt);
+select distinct splace,course from studies where (cost)=(select avg(cost) from studies);
+select distinct splace,course from studies where cost=(select max(cost) from studies);
+select * from studies;
+select course,count(distinct firstname) from studies group by course having count(distinct firstname)<(select avg(std) from (select count(distinct firstname)as std from studies)as std_min); 
+-- 16
+select course from studies where (cost)-(select avg(cost) from studies)<=1000 or (cost)-(select avg(cost) from studies)>=-1000;
+select dev_in from software where dcost=(select max(dcost) from software);
+select dev_in from software where scost=(select min(scost) from software);
+select firstname from software where sold=(select min(sold) from software);
+select sold from software where (dcost-scost)=(select min(dcost-scost) from software);
+select dev_in from software where (dcost=(select max(dcost) from software)) and title='pascal';
+select title,count(distinct dev_in) from software group by title having (count(distinct dev_in))=(select max(std) from(select count(distinct dev_in)as std from software)as max_std);
+select title,count(distinct dev_in) from software group by title having (count(distinct dev_in))=(select max(std) from(select count(distinct dev_in)as std from software)as max_std);
+select firstname from software where scost*sold =(select max(scost*sold) from software);
+select dev_in from software where sold<(select avg(sold) from software); 
+select firstname from programmer where sex='f' and salary>(select max(salary) from programmer where sex='m');
+select prof1,count(distinct firstname) from programmer group by prof1 having count(firstname) =(select max(std) from (select count(distinct firstname) as std from programmer group by prof1)as max_std);
+select firstname from software where scost*sold>=2*dcost;
+select firstname,title,dev_in from software where dcost in(select min(dcost) from software group by firstname,title); 
+select firstname from programmer where sex='m' and year(dob)=1965 order by dob limit 1;
+select distinct firstname,title,sold from software where sold in (select max(sold) from software group by firstname) union select distinct firstname,title,sold as min_sold from software where sold in (select min(sold) from software group by firstname);
+select distinct firstname,title,max_sold,min_sold from(select firstname,title,max(sold)as max_sold,min(sold) as min_sold from software group by firstname,title)as std;
+select firstname from programmer where sex='m' and year(dob)=1992 order by dob desc limit 1;
+select year(dob) from programmer group by year(dob) having count(year(dob))= (select max(std) from (select count(year(dob))as std from programmer group by year(dob))as max_std);
+select month(doj) from programmer group by month(doj) having count(month(doj))=(select max(std) from (select count(month(doj))as std from programmer group by month(doj))as max_std);
+select prof1,count(firstname) from programmer group by prof1 having count(firstname)=(select max(std) from(select count(firstname) as std from programmer group by prof1)as max_std);
+select firstname from programmer where sex='m' and salary<(select avg(salary) from programmer where sex='f');
+
+-- queries 4
+
+select * from programmer where salary =(select salary from programmer group by salary having count(distinct firstname)>1);
+select distinct s.firstname,s.title,s.dev_in,s.scost,s.dcost,s.sold from software s join programmer p on s.firstname=p.firstname where p.sex='m' and p.salary>3000;
+select s.dev_in from software s join programmer p on s.firstname=p.firstname where s.title='pascal' and p.sex='f';
+select * from programmer where year(doj)<1990;
+select distinct s.firstname,s.title,s.dev_in,s.scost,s.dcost,s.sold from software s join programmer p on s.firstname=p.firstname join studies st on s.firstname =st.firstname where s.dev_in='c' and p.sex='f' and splace='pragathi';
+select count(s.title),sum(s.sold),sum(s.sold*s.scost) from software s join studies st on s.firstname=st.firstname group by st.splace;
+select s.* from software s join studies st on s.firstname=st.firstname join programmer p on p.firstname=s.firstname where s.dev_in='dbase' and p.sex='m' and st.splace = (select splace from studies group by splace order by count(distinct firstname) desc limit 1);
+select s.* from software s join programmer p on p.firstname =s.firstname where (sex='m' and year(dob)<1965) or (sex='f' and year(dob)<1975);
+select s.* from software s join programmer p on p.firstname=s.firstname where s.Dev_in not in( p.prof1);
+select s.* from software s join programmer p on p.firstname=s.firstname where s.Dev_in not in( p.prof1) and s.Dev_in not in( p.prof2);
+select s.* from software s join programmer p on p.firstname=s.firstname join studies st on st.firstname=s.firstname where p.sex='m' and st.splace='pragathi';
+select firstname from programmer where firstname not in (select firstname from software);
+select sum(s.dcost) as total_cost from software s join studies st on s.firstname=st.firstname where st.splace='apple';
+select firstname from programmer where doj=(select doj from programmer group by doj having count(distinct firstname)>1);
+select firstname from programmer where prof2 = (select prof2 from programmer group by prof2 having count(distinct firstname)>1);
+select st.splace,sum(s.scost*s.sold) from software s join studies st on s.firstname=st.firstname group by st.splace;
+select st.splace from studies st join software s on st.firstname=s.firstname where s.dcost=(select max(dcost) from software);
+select distinct prof1 from programmer where prof1 not in(select dev_in from software) union select distinct prof2 from programmer where prof2 not in(select dev_in from software); 
+select p.firstname,p.salary,st.course from programmer p join studies st on p.firstname=st.firstname join software s on p.firstname=s.firstname where s.sold=(select max(sold) from software);
+select distinct p.firstname,ceil(st.cost/p.salary) from programmer p join studies st on p.firstname = st.firstname;
+select (s.dev_in) from software s join programmer p on s.firstname=p.firstname where timestampdiff(year,doj,now())<3 and (s.dcost=(select max(dcost) from software));
+select avg(p.salary) from programmer p join software s on s.firstname=p.firstname where (s.scost*s.sold)>50000;
+select count(s.dev_in) from software s join studies st on s.firstname=st.firstname where st.cost=(select min(cost) from studies);
+select count(s.dev_in),st.splace from software s join studies st on s.firstname=st.firstname where s.dcost=(select min(dcost) from studies) group by st.splace;
+select count(s.dev_in) from software s join programmer p on s.firstname=p.firstname where sex='f' and (salary=(select max(salary) from programmer where sex='m')); 
+select count(s.dev_in) from software s join programmer p on s.firstname=p.firstname join studies st on s.firstname=st.firstname where (timestampdiff(day,doj,now())=(select max(timestampdiff(day,doj,now())) from programmer)) and st.splace='BDPS';
+select s.firstname,st.splace from software s join studies st on s.firstname=st.firstname where s.dev_in is null;
+select count(firstname),sum(scost*sold-dcost) as tot_profit from software where dev_in in (select prof1 from programmer); 
+select p.firstname,count(Dev_in) from programmer p join software s on s.firstname=p.firstname group by p.firstname;
+select distinct p.firstname,p.dob,p.doj,p.age,p.sex,p.prof1,p.prof2,p.salary,s.title,s.dev_in,s.dcost,s.sold,st.splace,st.course,st.cost from programmer p join software s on p.firstname=s.firstname join studies st on p.firstname=st.firstname where st.splace='S.S.I.L';
