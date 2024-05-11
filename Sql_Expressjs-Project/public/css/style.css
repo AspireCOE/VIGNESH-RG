@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-color: blueviolet;
+}
+body{
+    height: 600px;
+    width: 600px;
+    margin: 0 auto;
+    background-color:white;
+}
+h2{
+     padding: 10px;
+     border-bottom: 2px solid black;
+}
+table{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border-collapse: collapse ;
+}
+table td{
+    border:1px solid black;
+    padding: 6px;
+}
+table thead td{
+    padding: 5px;
+    background-color: grey;
+    font-weight: bold;
+    color: whitesmoke;
+}
+.edit,.del{
+    text-decoration: none;
+    color: blueviolet;
+}
+.del{
+    color: red;
+}

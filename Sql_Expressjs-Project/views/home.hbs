@@ -1,0 +1,26 @@
+<h2>Student records
+</h2>
+<table>
+    <thead>
+        <tr>
+            <td>S.no</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>city</td>
+            <td>edit</td>
+            <td>del</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each rows}}
+        <tr>
+            <td>{{this.ID}}</td>
+            <td>{{this.NAME}}</td>
+            <td>{{this.AGE}}</td>
+            <td>{{this.CITY}}</td>
+            <td><a class="edit" href="/editUser/{{this.ID}}">edit</a></td>
+            <td><a class="del" href="/deleteUser/{{this.ID}}">delete</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
