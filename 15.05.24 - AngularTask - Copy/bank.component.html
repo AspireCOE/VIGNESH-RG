@@ -1,0 +1,42 @@
+<p>bank works!</p>
+Choose TypeOfAccount:<select [(ngModel)]="acctype">
+    <option>savings</option>
+    <option>business</option>
+    <option>salary</option>
+    
+</select>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Account Number</th>
+            <th> Account HolderName</th>
+            <th> TypeOfAccount</th>
+            <th>Amount</th>
+            <th>Account Created Date</th>
+            <th> Bank Name</th>
+            <th>Account Status</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @for (bank of AccountDetail ; track bank) {
+            <tr>
+                @if(bank.TypeOfAccount==acctype){
+                <td> {{bank.AccountNumber}} </td>
+                <td> {{bank.AccountHolderName}} </td>
+                <td> {{bank. TypeOfAccount}} </td>
+                <td> {{bank.Amount}} </td>
+                <td> {{bank.AccountCreatedDate}} </td>
+                <td> {{bank. BankName}} </td>
+                <td [ngSwitch]="getStatus(bank.Amount)">
+                    <p *ngSwitchCase="'inactive'" class="inactive">Inactive</p>
+                    <p *ngSwitchCase="'active'" class="active">Active</p>
+                    <p *ngSwitchCase="'loyal'" class="loyal">Loyal</p>
+                    <p *ngSwitchDefault class="unknown">Unknown</p>
+                  </td>
+                  
+                }
+            </tr>
+        }
+    </tbody>
+</table>

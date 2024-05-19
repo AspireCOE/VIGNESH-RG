@@ -1,0 +1,54 @@
+<p>angular-practice works!</p>
+<br>
+<h1>{{getMax(10000,20000)}}</h1>
+<br>
+<input type="text" [(ngModel)]="name">
+
+<br>
+<p>{{clickCount}}</p>
+
+<br>
+<button (click)="clickMe()">Click me!</button>
+<br>
+<br>
+<P>
+    Movie list
+</P>
+<br>
+<div>
+    <div>
+        {{title}}
+    </div>
+    <br>
+    <div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>s.no</th>
+                        <th>title</th>
+                        <th>director</th>
+                        <th>hero</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr [ngClass] ='{"bg-success":o, "bg-info":e}'
+                    *ngFor="let movie of movies; let i=index; let o=odd; let e=even">
+                        <td>{{i+1}}.</td>
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.director}}</td>
+                        <td>{{movie.hero}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<input type="text" [(ngModel)]="num">
+<div [ngSwitch]="num">
+    <div *ngSwitchCase="1">One</div>
+</div>
+
+<br>
+<p>{{toDate|date:'fullDate'}}</p>
