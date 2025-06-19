@@ -1,0 +1,35 @@
+.orders{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.orders-items-item{
+    display: flex;
+    width: max(1010px);
+    justify-content: space-between;
+    margin: 25px;
+    border: 1px darkgray solid;
+    padding: 15px;
+    border-radius: 10px;
+}
+.orders-items-item img{
+    width: 60px;
+    height: 60px;
+}
+.order-items-item-quantity{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.orders .order-address{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.order-status select{
+    width: 135px;
+    margin-top: 20px;
+    padding: 5px;
+    margin-right: max(15px);
+}

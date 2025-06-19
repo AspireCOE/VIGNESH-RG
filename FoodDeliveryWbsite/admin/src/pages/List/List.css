@@ -1,0 +1,22 @@
+.list-table-format{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-row: auto;
+    padding: 12px 15px;
+    margin-left: max(100px);
+    border: 1px solid darkgray;
+    width:max(1000px);
+}
+.list-table-format img{
+    width: max(80px);
+}
+.list-table-format b{
+    padding: 10px;
+}
+.list-table-format .list-item-name{
+    margin-left: max(50px);
+}
+.list{
+    margin-top: max(50px);
+    color: black;
+}

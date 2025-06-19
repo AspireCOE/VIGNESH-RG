@@ -1,0 +1,24 @@
+.verify{
+    margin-top: 60px;
+}
+.items-items{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px;
+    border: 1px darkgray solid;
+    padding: 20px;
+    width: max(1000px);
+}
+.items-items .order-status {
+    color: blueviolet;
+    font-weight: 800;
+}
+.items-items button{
+    cursor: pointer;
+    color: black;
+    background-color: blueviolet;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}

@@ -1,0 +1,28 @@
+.sidebar{
+    padding: 8px 4%;
+    min-height: 100vh;
+    border: 1.5px solid darkgrey;
+    border-top: 0px;
+    font-size: max(1vw,15px);
+}
+
+.sidebar .sidebar-options{
+    padding-top: 50px;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar .sidebar-option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+.sidebar-options .active{
+    color: blueviolet;
+}
+
