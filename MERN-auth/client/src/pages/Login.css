@@ -1,0 +1,18 @@
+.login{
+
+    text-align: center;
+    margin-top: 50px;
+}
+.login input{
+    border: 1px solid black;
+    width: 190px;
+    height: 30px;
+    margin: 10px;
+}
+.login .text{
+    font-size: 15px;
+    cursor: pointer;
+}
+.login button{
+    cursor: pointer;
+}

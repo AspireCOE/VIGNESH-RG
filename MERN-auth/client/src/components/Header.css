@@ -1,0 +1,17 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.header{
+    text-align: center;
+    justify-content: center;
+}
+
+.header button{
+    font-size: 25px;
+    font-weight: 600;
+    padding: 15px;
+    margin: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
