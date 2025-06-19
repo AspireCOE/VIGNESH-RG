@@ -1,0 +1,31 @@
+
+<div *ngIf="!showLogin" class="seller-auth">
+    <h2 class="heading">Seller SignUp</h2>
+<div class="signup">
+    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="commonForm">
+        <input id="abc" required type="text" class="formInput" placeholder="Enter UserName" name="name" ngModel #name="ngModel" required>
+        <p><span class="error" *ngIf="name.invalid && name.touched">Please enter a vaild input</span></p>
+        <input required type="text" class="formInput" placeholder="Enter Email" name="email" ngModel email #email="ngModel" required>
+        <p><span class="error" *ngIf="email.invalid && email.touched">Please enter a vaild input</span></p>
+        <input required type="password" class="formInput" placeholder="Enter password" name="password" ngModel name="password" ngModel minlength="3" maxlength="12" #password="ngModel" required><br>
+        <p><span class="error" *ngIf="password.invalid && password.touched">Please enter a vaild input</span></p>
+        <button [disabled]="sellerSignUp.invalid">Login</button><br><br>
+        <a class="auth-toggle" (click)="openLogin()">Already have a account?Click for Login</a>
+    </form>
+</div>
+</div>
+
+<div *ngIf="showLogin" class="Login">
+    <h2 class="heading">Seller Login</h2>
+<div class="signup">
+    <form #sellerLogin="ngForm" (ngSubmit)="Login(sellerLogin.value)" class="commonForm">
+        <p class="error">{{authError}}</p>
+        <input required type="text" class="formInput" placeholder="Enter Email" name="email" ngModel email #email="ngModel" required>
+        <p><span class="error" *ngIf="email.invalid && email.touched">Please enter a vaild input</span></p>
+        <input required type="password" class="formInput" placeholder="Enter password" name="password" ngModel minlength="3" maxlength="12" #password="ngModel" required><br>
+        <p><span class="error" *ngIf="password.invalid && password.touched">Please enter a vaild input</span></p>
+        <button [disabled]="sellerLogin.invalid">Login</button><br><br>
+        <a class="auth-toggle" (click)="openSignup()">Doesn't have a account? Click for Sign Up</a>
+    </form>
+</div>
+</div>

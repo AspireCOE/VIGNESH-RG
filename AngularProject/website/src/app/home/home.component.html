@@ -1,0 +1,40 @@
+<div class="product-list-wrapper">
+	<h2>
+		Popular products
+	</h2>
+	<div class="row">
+		<div class="col-sm-3" *ngFor="let item of trendyProduct">
+			<div class="product-item">
+				<div class="center"><img src="{{item.image}}" alt=""></div>
+				<div class="product-details">
+					<h6 class="name-head">{{item.name}}</h6>
+					<h6 class="price-head">Price:${{item.price}}</h6>
+				</div>
+			</div>
+				<div class="product-footer">
+					<a routerLink="/details/{{item.id}}">View details</a>
+					<a href="">Add to cart</a>
+				</div>
+		</div>
+	</div>
+</div>
+<div class="product-list-wrapper">
+	<h2>
+		All Products
+	</h2>
+	<div class="row">
+		<div class="col-sm-3" *ngFor="let items of allProduct">
+			<div class="product-item">
+				<div class="center"><img src="{{items.image}}" alt=""></div>
+				<div class="product-details">
+					<h6 class="name-head">{{items.name}}</h6>
+					<h6 class="price-head">Price:${{items.price}}</h6>
+				</div>
+			</div>
+				<div class="product-footer">
+					<a routerLink="/details/{{items.id}}">View details</a>
+					<a href="">Add to cart</a>
+				</div>
+		</div>
+	</div>
+</div>

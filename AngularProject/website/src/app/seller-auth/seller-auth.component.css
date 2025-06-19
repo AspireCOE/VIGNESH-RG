@@ -1,0 +1,8 @@
+.auth-toggle{
+    color: blueviolet;
+    margin: 15px;
+    cursor: pointer;
+}
+.error{
+    text-align: center;
+}

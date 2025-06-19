@@ -1,0 +1,46 @@
+.product-item img{
+    width: 160px;
+    height: 140px;
+}
+.product-details{
+    margin-top: 15px;
+}
+.product-list-wrapper{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.product-item .product-details{
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+.product-item .name-head{
+    font-size: 20px;
+    font-weight: 600;
+}
+.product-item h6{
+    text-align: center;
+}
+.product-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.row{
+    padding-top:30px;
+    padding-bottom: 20px;
+}
+.col-sm-3{
+    border: 1px solid lightgray;
+    width: 275px;
+    margin-left: 45px;
+    margin-bottom: 40px;
+}
+.center{
+    text-align: center;
+    padding: 30px;
+}
+/* .product-list-wrapper{
+    background-image: url("https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/csm_E1hyFy6WQAEpJPV_ab27e1db46.jpg");
+    height:100vh;
+    background-size: cover;
+} */

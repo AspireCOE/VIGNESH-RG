@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    -webkit-text-size-adjust: 100%;
+}
+body{
+    font-family:'Times New Roman', Times, serif;
+}
+.commonForm{
+    text-align: center;
+    margin: 25px;
+}
+.commonForm .formInput{
+    height: 30px;
+    width: 300px;
+    border: 1.5px solid black;
+}
+.commonForm button{
+    width: 105px;
+    height: 30px;
+    color: black;
+    color: blueviolet;
+}
+.heading {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.error{
+    color:red;
+}
+.message{
+    color: green;
+    text-align: center;
+}
+.trash{
+
+    text-align: center;
+}
+.signup .error{
+    color: red;
+}
+button:disabled{
+    cursor: not-allowed;
+}

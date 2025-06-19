@@ -1,0 +1,184 @@
+{
+  "seller": [
+    {
+      "id": "fae7",
+      "name": "vignesh",
+      "email": "vignesh@gmail.com",
+      "password": "vk123"
+    },
+    {
+      "id": "c8d3",
+      "name": "shrechithra",
+      "email": "shre@gmail.com",
+      "password": "chithu"
+    },
+    {
+      "id": "e263",
+      "name": "shrechithra",
+      "email": "shre1@gmail.com",
+      "password": "shre1"
+    }
+  ],
+  "products": [
+    {
+      "name": "iphone 14",
+      "price": "150",
+      "category": "mobile",
+      "description": "this is Apple product launched on oct 13 2002",
+      "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-15-pro-model-unselect-gallery-1-202309?wid=5120&hei=2880&fmt=webp&qlt=70&.v=UW1GeTRObi9UaVF4S3FUNERNMWVhZ2FRQXQ2R0JQTk5udUZxTkR3ZVlpSmVJdk5rWHR5c3l5ME9ZNVV1Y1o0SjBoUVhuTWlrY2hIK090ZGZZbk9HeE1xUVVnSHY5eU9CcGxDMkFhalkvT0Q5QmVFZ0s0ZTVTcDJpVVJkaDNNVDdmbW94YnYxc1YvNXZ4emJGL0IxNFp3PT0=&traceId=1",
+      "id": "8e70"
+    },
+    {
+      "name": "Samsung s24",
+      "price": "250",
+      "category": "Samsung mobile",
+      "description": "Samsung launched s24 model in 3 different colors and in sept 2020 and made its first ever new tech based launch",
+      "image": "https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-s928-492660-sm-s928blgcins-539573703?$1300_1038_PNG$",
+      "id": "4838"
+    },
+    {
+      "id": "8127",
+      "name": "I phone 13",
+      "price": "250",
+      "category": "model 13",
+      "description": "Best camera quality and increase in speed",
+      "image": "https://ivenus.in/wp-content/uploads/2023/12/iPhone_13_Pink-300x300.webp"
+    },
+    {
+      "name": "iPhone 11",
+      "price": "200",
+      "category": "Apple iPhone 11 (128GB ROM, 4GB RAM)",
+      "description": "Dual Rear Camera | Single Front Camera",
+      "image": "https://shop.brilyant.com/wp-content/uploads/2023/10/iPhone11Red-300x300-1.png",
+      "id": "5613"
+    },
+    {
+      "id": "62af",
+      "name": "iphone 10",
+      "price": "120",
+      "category": "phones",
+      "description": " iPhone 11 256GB/128GB/64GB ",
+      "image": "https://appleyug.ru/wp-content/uploads/2019/09/zelenyj_result-300x300.jpg"
+    },
+    {
+      "name": "1plus nord",
+      "price": "48",
+      "category": "phones",
+      "description": "Network bands and the price OnePlus 12 Android smartphone. Announced Dec 2023. Features 6.82″ display",
+      "image": "https://www.t-mobile.com/news/_admin/uploads/2022/10/OnePlus-Nord-N300_5G-Announcement_nr-article_10-20-22-300x300.png",
+      "id": "a433"
+    },
+    {
+      "name": "1plus 10 pro",
+      "price": "120",
+      "category": "phones",
+      "description": "nePlus 10 Pro Android smartphone. Announced Jan 2022. Features 6.7″ display, Snapdragon 8 Gen 1 chipset, 5000 mAh battery",
+      "image": "https://elcytec.com/wp-content/uploads/2024/04/elcytec_oneplus_nord_ce_4_black_3-300x300.webp",
+      "id": "96e6"
+    },
+    {
+      "id": "29b4",
+      "name": "OnePlus Nord CE4 5G ",
+      "price": "128",
+      "category": "phones",
+      "description": "OnePlus Nord CE4 5G - Design Unlike Any Other | OnePlus India - OnePlus (India)",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5YN6lPRwW_p6oeh-qIlgLK0V0u8X5UvDqlA&s"
+    },
+    {
+      "name": "Samsung a21s",
+      "price": "100",
+      "category": "phones",
+      "description": "Samsung Galaxy A21s review: Only worth it for outstanding battery life ",
+      "image": "https://www.tradeinn.com/f/13769/137696531/samsung-galaxy-a21s-3gb-32gb-6.5.jpg",
+      "id": "2a08"
+    },
+    {
+      "id": "b508",
+      "name": "Samsung Galaxy A54 ",
+      "price": "200",
+      "category": "phones",
+      "description": "Buy Samsung Galaxy A54 A546 5G 8GB/256GB Dual Sim White SM-A546BZWD – Dakauf",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8MO9bMJuKUyrVZeWhSM33FbNwlKZQX_HhrQ&s"
+    },
+    {
+      "id": "9b46",
+      "name": "Redmi 12",
+      "price": "200",
+      "category": "phones",
+      "description": "Redmi ",
+      "image": "https://tse2.mm.bing.net/th/id/OIP.OxGk5jktYRIqM0xJya368gHaHa?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Google pixel 6",
+      "price": "120",
+      "category": "phones",
+      "description": "google pixel 6 ,The Google Pixel 6a is a powerful and intuitive phone that comes with innovative features such as Face Unblur, Magic Eraser, Night Sight, and Real Tone",
+      "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/csm_E1hyFy6WQAEpJPV_ab27e1db46.jpg",
+      "id": "eb54"
+    }
+  ],
+  "users": [
+    {
+      "id": "95a9",
+      "name": "vignesh",
+      "email": "vignesh@gmail.com",
+      "password": "vignesh"
+    },
+    {
+      "id": "2c7e",
+      "name": "abcd",
+      "email": "abcd@gmail.com",
+      "password": "abcd"
+    },
+    {
+      "id": "5b31",
+      "name": "a12",
+      "email": "a12@gmail.com",
+      "password": "a12"
+    },
+    {
+      "id": "8b34",
+      "name": "a11",
+      "email": "a11@gmail.com",
+      "password": "a11"
+    },
+    {
+      "id": "3168",
+      "name": "a13",
+      "email": "a13@gmail.com",
+      "password": "a13"
+    },
+    {
+      "id": "1a57",
+      "name": "vigneshrg",
+      "email": "vigneshrg@gmail.com",
+      "password": "vigneshrg"
+    },
+    {
+      "id": "9224",
+      "name": "shrechithra",
+      "email": "shre@gmail.com",
+      "password": "shre"
+    },
+    {
+      "id": "a197",
+      "name": "shrechithra",
+      "email": "shre1@gmail.com",
+      "password": "shre1"
+    }
+  ],
+  "cart": [
+    {
+      "id": "e448",
+      "name": "iphone 14",
+      "price": "150",
+      "category": "mobile",
+      "description": "this is Apple product launched on oct 13 2002",
+      "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-15-pro-model-unselect-gallery-1-202309?wid=5120&hei=2880&fmt=webp&qlt=70&.v=UW1GeTRObi9UaVF4S3FUNERNMWVhZ2FRQXQ2R0JQTk5udUZxTkR3ZVlpSmVJdk5rWHR5c3l5ME9ZNVV1Y1o0SjBoUVhuTWlrY2hIK090ZGZZbk9HeE1xUVVnSHY5eU9CcGxDMkFhalkvT0Q5QmVFZ0s0ZTVTcDJpVVJkaDNNVDdmbW94YnYxc1YvNXZ4emJGL0IxNFp3PT0=&traceId=1",
+      "quantity": 1,
+      "productId": "8e70",
+      "userId": "a197"
+    }
+  ],
+  "orders": []
+}

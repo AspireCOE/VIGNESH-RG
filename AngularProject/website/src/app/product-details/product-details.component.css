@@ -1,0 +1,25 @@
+.productDetails-img img{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    margin: 20px;
+}
+.productDetails{
+    position: absolute;
+    left: 550px;
+    top: 230px;
+}
+.details-btn button{
+    color: blueviolet;
+    margin-top: 10px;
+    margin-right: 40px;
+}
+.quantity-group input{
+    width: 68px;
+    border-radius: 5px;
+    text-align: center;
+}
+.quantity-group button{
+    border-radius: 5px;
+    width: 22px;
+}
